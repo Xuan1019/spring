@@ -6,4 +6,20 @@
 
     <!--配置User对象创建-->
     <bean id="user" class="com.simon.spring5.User"></bean>
+    <bean id="book" class="com.simon.spring5.Book">
+        <!--使用property完成属性注入
+                name:类里面属性名称
+                value:像属性注入的值
+                -->
+        <property name="bname" value="易筋经"></property>
+        <property name="bauthor" value="达摩老祖"></property>
+
+    </bean>
+
 </beans>
+
+
+    <!--配置Book对象创建及属性注入-->
+
+
+

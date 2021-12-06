@@ -1,5 +1,6 @@
 package com.simon.spring5.testdemo;
 
+import com.simon.spring5.Book;
 import com.simon.spring5.User;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -13,10 +14,10 @@ public class TestSpring5 {
                 new ClassPathXmlApplicationContext("bean1.xml");
 
         //2 获取配置创建的对象
-        User user = context.getBean("user",User.class);
+        Book book = context.getBean("book", Book.class);
 
-        System.out.println(user);
-        user.add();
+        System.out.println(book);
+        book.testDemo();
 
 
     }
