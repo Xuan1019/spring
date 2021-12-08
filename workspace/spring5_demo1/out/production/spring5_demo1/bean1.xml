@@ -4,6 +4,44 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <!--配置User对象创建-->
+    <!--1.配置User对象创建-->
     <bean id="user" class="com.simon.spring5.User"></bean>
+
+    <!--2.set方法注入属性    -->
+    <bean id="book" class="com.simon.spring5.Book">
+        <!--使用property完成属性注入
+                name:类里面属性名称
+                value:像属性注入的值
+                -->
+        <property name="bname" value="易筋经"></property>
+        <property name="bauthor" value="达摩老祖"></property>
+        <property name="address" >
+            <value><![CDATA[<<南京>>]]></value>
+        </property>
+
+
+        <!-- null值-->
+<!--        <property name="address">-->
+<!--            <null/>-->
+<!--        </property>-->
+
+
+
+
+    </bean>
+
+    <!--3.有参构造注入属性-->
+    <bean id="orders" class="com.simon.spring5.Orders">
+        <constructor-arg name="oname" value="电脑"></constructor-arg>
+        <constructor-arg name="address" value="China"></constructor-arg>
+
+
+    </bean>
+
 </beans>
+
+
+    <!--配置Book对象创建及属性注入-->
+
+
+

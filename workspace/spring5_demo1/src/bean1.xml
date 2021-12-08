@@ -15,6 +15,18 @@
                 -->
         <property name="bname" value="易筋经"></property>
         <property name="bauthor" value="达摩老祖"></property>
+        <property name="address" >
+            <value><![CDATA[<<南京>>]]></value>
+        </property>
+
+
+        <!-- null值-->
+<!--        <property name="address">-->
+<!--            <null/>-->
+<!--        </property>-->
+
+
+
 
     </bean>
 
