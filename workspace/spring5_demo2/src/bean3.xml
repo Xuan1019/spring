@@ -6,16 +6,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <!--1 提取list集合类型属性注入-->
-    <util:list id="booklist">
-        <value>易筋经</value>
-        <value>九阴真经</value>
-        <value>九阳神功</value>
-    </util:list>
-
-    <!--2 提取list集合类型属性注入使用-->
-    <bean id="book" class="com.simon.spring5.collectiontype.Book" scope="prototype">
-        <property name="list" ref="booklist"></property>
+<!--1、Spring有两种类型bean，一种普通bean，另外一种工厂bean (FactoryBean)
+2、普通bean:在配置文件中定义bean类型就是返回类型
+3、工厂bean:在配置文件定义bean类型可以和返回类型不一样
+第一步创建类,让这个类作为工厂bean，实现接口FactoryBean,
+第二步实现接口里面的方法，在实现的方法中定义返回的bean类型。
+-->
+    <bean id="myBean" class="com.simon.spring5.factorybean.MyBean">
     </bean>
 </beans>
 
