@@ -1,5 +1,6 @@
 package com.simon.spring5.testdemo;
 
+import com.simon.spring5.bean.Orders;
 import com.simon.spring5.collectiontype.Book;
 import com.simon.spring5.collectiontype.Course;
 import com.simon.spring5.collectiontype.Stu;
@@ -27,7 +28,7 @@ public class TestSpring5Demo1 {
 
     }
     @Test
-    public void testC3(){
+    public void test3(){
         // 1.加载spring配置文件
         ApplicationContext context =
                 new ClassPathXmlApplicationContext("bean3.xml");
@@ -36,6 +37,27 @@ public class TestSpring5Demo1 {
         Course course = context.getBean("myBean", Course.class);
 
         System.out.println(course);
+
+    }
+
+    @Test
+    public void test4(){
+        // 1.加载spring配置文件
+//        ApplicationContext context =
+//                new ClassPathXmlApplicationContext("bean4.xml");
+
+        // ApplicationContext没有close()方法
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("bean4.xml");
+
+        // 2.获取配置创建的对象
+        Orders orders = context.getBean("orders", Orders.class);
+
+        System.out.println("第四步 获取创建bean实例对象");
+        System.out.println(orders);
+
+        //手动让bean实例销毁
+        context.close();
 
     }
 
