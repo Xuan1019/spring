@@ -1,5 +1,6 @@
 package com.simon.spring5.testdemo;
 
+import com.simon.spring5.autowire.Emp;
 import com.simon.spring5.bean.Orders;
 import com.simon.spring5.collectiontype.Book;
 import com.simon.spring5.collectiontype.Course;
@@ -58,6 +59,24 @@ public class TestSpring5Demo1 {
 
         //手动让bean实例销毁
         context.close();
+
+    }
+
+    @Test
+    public void test5(){
+        // 1.加载spring配置文件
+//        ApplicationContext context =
+//                new ClassPathXmlApplicationContext("bean4.xml");
+
+        // ApplicationContext没有close()方法
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("bean5.xml");
+
+        // 2.获取配置创建的对象
+        Emp emp = context.getBean("emp", Emp.class);
+
+        System.out.println(emp);
+
 
     }
 
